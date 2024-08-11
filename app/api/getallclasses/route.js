@@ -7,7 +7,10 @@ const handler = async (req) => {
         const classes = await Class.find({});
 
         return new Response(JSON.stringify({ classes }), {
-            status: 200
+            status: 200,
+            headers: {
+                'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate',
+            }
         });
 
     } catch (error) {
