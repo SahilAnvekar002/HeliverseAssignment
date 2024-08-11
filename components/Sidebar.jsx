@@ -19,7 +19,7 @@ function Sidebar() {
   useEffect(() => {
     
     const getClasses = async()=>{
-      const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getallclasses`);
+      const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getallclasses`, { cache: 'no-store' });
       const res = await data.json();
       setClasses(res.classes);
     }
