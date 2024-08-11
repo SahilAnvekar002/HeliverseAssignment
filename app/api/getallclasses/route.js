@@ -21,9 +21,16 @@ const handler = async (req) => {
 
         const classes = await Class.find({});
 
-        return new Response(JSON.stringify({ classes }), {
-            status: 200
-        });
+        if(classes){
+            return new Response(JSON.stringify({ classes }), {
+                status: 200
+            });
+        }
+        else{
+            return new Response(JSON.stringify({ classes : [] }), {
+                status: 200
+            });
+        }
 
     } catch (error) {
         return new Response(JSON.stringify({ error: "Server error. Please try again." }), {
