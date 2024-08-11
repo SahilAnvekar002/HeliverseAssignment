@@ -19,7 +19,7 @@ function AddComponent({ triggerRefresh }) {
         if (cuser) {
             setAdmin(cuser?.designation);
         }
-    }, [localStorage.getItem('user')])
+    }, [pathname])
 
 
     const handleOpen = () => {

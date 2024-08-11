@@ -1,6 +1,7 @@
 "use client"
 import Modal from '@/components/Modal';
 import { IconPlus } from '@tabler/icons-react'
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 function Class({ params }) {
@@ -16,13 +17,14 @@ function Class({ params }) {
   const [refreshKey, setRefreshKey] = useState(0);
   const [refreshKey2, setRefreshKey2] = useState(0);
   const [admin, setAdmin] = useState(null);
+  const router = usePathname();
 
   useEffect(() => {
     const cuser = JSON.parse(localStorage.getItem('user'));
     if(cuser){
       setAdmin(cuser?.designation);
     }
-  }, [localStorage.getItem('user')])
+  }, [router])
   
 
   useEffect(() => {

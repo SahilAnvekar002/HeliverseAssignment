@@ -34,7 +34,7 @@ function Sidebar() {
       setAdminInfo(cuser);
     }
 
-  }, [localStorage.getItem('user')])
+  }, [pathname])
   
 
   const handleClasses = ()=>{
