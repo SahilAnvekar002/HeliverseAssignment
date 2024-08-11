@@ -9,7 +9,7 @@ function TableView({ userType, users, triggerRefresh }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
 
-    const handleDelete = async (id) => {
+    /*const handleDelete = async (id) => {
         const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/delete-user`, {
             method: 'DELETE',
             headers: {
@@ -46,7 +46,7 @@ function TableView({ userType, users, triggerRefresh }) {
                 transition: Bounce,
             });
         }
-    }
+    }*/
 
     return (
         <>
@@ -78,9 +78,9 @@ function TableView({ userType, users, triggerRefresh }) {
                                             <td className="border-b-2 border-gray-200 px-4 py-3">
                                                 <button onClick={() => { setIsModalOpen(true), setCurrentUser(user) }}> <IconEdit /> </button>
                                             </td>
-                                            <td className="border-b-2 border-gray-200 px-4 py-3">
+                                            {/*<td className="border-b-2 border-gray-200 px-4 py-3">
                                                 <button onClick={() => handleDelete(user?._id)}> <IconTrash /> </button>
-                                            </td>
+                                            </td>*/}
                                         </tr>
                                     )
                                 })}
